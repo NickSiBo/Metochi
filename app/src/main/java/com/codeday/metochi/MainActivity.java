@@ -13,7 +13,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
 public class MainActivity extends android.app.Activity {
-    int state = 0;
+    boolean state = false;
     @Override
     public void onCreate(android.os.Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,35 +23,36 @@ public class MainActivity extends android.app.Activity {
         android.widget.ImageButton trigger = (android.widget.ImageButton) findViewById(com.codeday.metochi.R.id.buttonMain);
         com.firebase.client.Firebase.setAndroidContext(this);
         final com.firebase.client.Firebase metochi = new com.firebase.client.Firebase("https://metochi.firebaseio.com");
-        ppState();
+        ppState(state);
         android.widget.ImageView silence = (android.widget.ImageView) findViewById(com.codeday.metochi.R.id.nameLogo);
         silence.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                state = 0;
-                ppState();
+                state = false;
+                ppState(state);
             }
         });
         trigger.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                if (state == 0) metochi.child("play").setValue(1);
+                if (!state) metochi.child("play").setValue(1);
                 else metochi.child("play").setValue(0);
             }
         });
         metochi.child("play").addValueEventListener(new com.firebase.client.ValueEventListener() {
             @Override
             public void onDataChange(com.firebase.client.DataSnapshot dataSnapshot) {
-                state = Integer.parseInt(dataSnapshot.getValue().toString());
-                ppState();
+                if(dataSnapshot.getValue().toString().equals("1")) state = true;
+                else state = false;
+                ppState(state);
             }
             @Override
             public void onCancelled(com.firebase.client.FirebaseError firebaseError) { }
         });
     }
-    public void ppState() {
-        android.media.MediaPlayer mP =  android.media.MediaPlayer.create(this, com.codeday.metochi.R.raw.saytechnologic);
-        if(state == 1) mP.start();
-        if(state == 0) mP.stop();
+    public void ppState(boolean currState) {
+        MediaPlayer mP =  android.media.MediaPlayer.create(this, com.codeday.metochi.R.raw.saytechnologic);
+        if(currState) mP.start();
+        else mP.stop();
     }
 }
