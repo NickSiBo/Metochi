@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="C:\Skydrive\Programming Workspaces\Android Workspace\metochi\app\build\intermediates\pre-dexed\debug\firebase-client-android-2.0.0-1f2578fda35070a0eb749edf5420889c46136727.jar"
         jar="C:\Skydrive\Programming Workspaces\Android Workspace\metochi\app\libs\firebase-client-android-2.0.0.jar"
         jumboMode="false"
         revision="21.0.1"
-        sha1="5dd9b99445f950849cb411b747aa93be9cf11bce"/>
-    <item
-        dex="C:\Skydrive\Programming Workspaces\Android Workspace1\metochi\app\build\intermediates\pre-dexed\debug\firebase-client-android-2.0.0-ae3af10aa5d3be0ab71875fc7f2db0609cd65884.jar"
-        jar="C:\Skydrive\Programming Workspaces\Android Workspace1\metochi\app\libs\firebase-client-android-2.0.0.jar"
-        jumboMode="false"
-        revision="21.0.1"
-        sha1="5dd9b99445f950849cb411b747aa93be9cf11bce"/>
+        sha1="5dd9b99445f950849cb411b747aa93be9cf11bce">
+        <dex dex="C:\Skydrive\Programming Workspaces\Android Workspace\metochi\app\build\intermediates\pre-dexed\debug\firebase-client-android-2.0.0-1f2578fda35070a0eb749edf5420889c46136727.jar" />
+    </item>
 
-</pre-dex-items>
+</items>
