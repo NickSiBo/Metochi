@@ -12,7 +12,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-public class MainActivity extends android.app.Activity {
+public class MainActivity extends Activity {
     boolean state = false;
     @Override
     public void onCreate(android.os.Bundle savedInstanceState) {
