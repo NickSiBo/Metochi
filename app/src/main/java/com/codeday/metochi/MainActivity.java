@@ -1,5 +1,6 @@
 package com.codeday.metochi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,7 @@ import com.firebase.client.ValueEventListener;
 public class MainActivity extends Activity {
     boolean state = false;
     @Override
-    public void onCreate(android.os.Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(android.view.Window.FEATURE_NO_TITLE);
         getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN, android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN);
